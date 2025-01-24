@@ -6,7 +6,7 @@ graph = pgv.AGraph(strict=False, directed=True, bgcolor='#2B2B2B')
 # Define table attributes for each node
 def add_table_node(graph, table_name, fields, fillcolor, header_color):
     updated_fields = [f"🔑 {field}" if "(PK)" in field else field for field in fields]
-    label = f"{table_name}\n" + "\l".join([f"{field}" for field in updated_fields]) + "\l"
+    label = f"{table_name}\n" + "\n".join([f"{field}" for field in updated_fields])
     graph.add_node(
         table_name,
         shape='box',
